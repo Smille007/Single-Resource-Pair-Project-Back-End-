@@ -12,7 +12,7 @@
   },
   "name": "back-end",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "server.js",
   "devDependencies": {},
   "author": "",
   "license": "ISC",

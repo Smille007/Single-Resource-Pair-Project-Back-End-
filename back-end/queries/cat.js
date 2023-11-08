@@ -23,7 +23,7 @@ const getCat = async (id) => {
     const createCat = async(cat) => {
         try {
             const newCat = await db.one(
-                "INSERT INTO cats (name, age, color, breed, arrival_date, spayed) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *", [cat.name, cat.age, cat.color, cat.breed,cat.arrival_date, cat.spayed]
+                "INSERT INTO cats (name, age, color, breed, arrival_date, spayed) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *", [cat.name, cat.age, cat.color, cat.breed, cat.arrival_date, cat.spayed]
             )
             return newCat
         } catch(error) {
@@ -41,7 +41,7 @@ const getCat = async (id) => {
     const updateCat = async (id, cat) => {
         try {
             const updatedCat = await db.one(
-                "UPDATE cat SET name=$1 age =$2, color=$3, breed=$4, arrival_date=$5, spayed=$6 WHERE id=$7 RETURNING *",
+                "UPDATE cats SET name=$1, age =$2, color=$3, breed=$4, arrival_date=$5, spayed=$6 WHERE id=$7 RETURNING *",
                 [cat.name, cat.age, cat.color, cat.breed, cat.arrival_date, cat.spayed, id]
             )
             return updatedCat
