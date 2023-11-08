@@ -23,8 +23,18 @@ cats.get("/",async (req, res) => {
 
     cats.post('/', checkName, checkAge, checkColor, checkBreed, checkBoolean, async (req, res) => {
         const body = req.body
-       const color = await createCat(body)
+       const cat = await createCat(body)
        res.status(200).json(cat)
+    })
+    cats.delete('/:id', async (req, res) => {
+ 
+        const { id } = req.params
+        const deletedCat = await deleteCat(id)
+        if(deletedCat.id){
+            res.status(200).json(deletedCat)
+        } else {
+            res.status(404).json({ error: "Color Not Found" })
+        }
     })
 
     module.exports = cats
