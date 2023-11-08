@@ -1,6 +1,6 @@
 const express = require("express");
 const cats = express.Router();
-const{getAllCats, getCat} = require('../queries/cat')
+const{getAllCats, getCat, createCat} = require('../queries/cat')
 const {checkName, checkAge, checkColor, checkBreed, checkBoolean} = require('../validations/checkCats')
 
 cats.get("/",async (req, res) => {
