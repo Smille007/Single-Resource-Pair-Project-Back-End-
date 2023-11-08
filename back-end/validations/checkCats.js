@@ -24,7 +24,7 @@ const checkAge = (req, res, next) => {
                 if(req.body.breed){
                     return next()
                 }else {
-                 res.status(400).json({error: 'Time is required'})
+                 res.status(400).json({error: 'Breed is required'})
                 }
                 }
 
@@ -36,7 +36,7 @@ const checkAge = (req, res, next) => {
         }else{
             res.status(400).json({error:"Spayed must be type boolean"})
         }
-        }
+    }
     
     
     
