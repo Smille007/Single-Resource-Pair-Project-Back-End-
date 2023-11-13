@@ -46,5 +46,8 @@ cats.get("/",async (req, res) => {
             res.status(404).json({ error: "Cat Not Found" })
         }
     })
+    cats.get("/*", (req, res) => {
+        res.status(404).send("Page not found");
+      });
 
     module.exports = cats
